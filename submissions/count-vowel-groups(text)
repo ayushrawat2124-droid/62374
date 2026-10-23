@@ -1,0 +1,33 @@
+# Take a word or text as input from the user
+text = input("Enter a word: ")
+
+# Initialize the vowel group counter to 0
+count = 0
+
+# Store all vowels (both lowercase and uppercase)
+vowels = "aeiouAEIOU"
+
+# Track whether the previous character was a vowel
+in_group = False
+
+# Check each character in the input text
+for ch in text:
+
+    # Check if the current character is a vowel
+    if ch in vowels:
+
+        # If we are not already inside a vowel group,
+        # a new vowel group has started
+        if not in_group:
+            count += 1  # Increase the vowel group count by 1
+
+        # Mark that we are currently inside a vowel group
+        in_group = True
+
+    else:
+        # If the character is not a vowel,
+        # the current vowel group has ended
+        in_group = False
+
+# Display the total number of vowel groups
+print(count)
